@@ -26,7 +26,7 @@ $totalQuestions = 0;
 $results = [];
 
 $stmt = $pdo->prepare("SELECT q.id AS questionId, q.label AS question, o.label AS answer, o.correct FROM QuizAnswer a 
-    JOIN QuizOption o ON a.questionId = o.id 
+    JOIN QuizOption o ON a.optionId = o.id 
     JOIN QuizQuestion q ON o.questionId = q.id 
     WHERE a.userId = :userId AND q.quizId = :quizId");
 $stmt->execute(['userId' => $userId, 'quizId' => $quizId]);

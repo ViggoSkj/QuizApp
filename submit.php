@@ -49,8 +49,8 @@ foreach ($answers as $questionId => $selectedOptionId) {
         $correctCount++;
     }
     
-    $stmt = $pdo->prepare("INSERT INTO QuizAnswer (questionId, userId) VALUES (:questionId, :userId)");
-    $stmt->execute(['questionId' => $selectedOptionId, 'userId' => $userId]);
+    $stmt = $pdo->prepare("INSERT INTO QuizAnswer (optionId, userId) VALUES (:optionId, :userId)");
+    $stmt->execute(['optionId' => $selectedOptionId, 'userId' => $userId]);
 }
 
 $score = ($totalQuestions > 0) ? round(($correctCount / $totalQuestions) * 100, 2) : 0;
