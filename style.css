@@ -1,0 +1,13 @@
+html
+{
+    color: white;
+}
+
+*
+{
+    box-sizing: border-box;
+}
+
+body{
+    background-color:  rgb(24, 25, 29);
+}
